@@ -28,7 +28,7 @@
         filter: blur(5px);
   }
 
-  .grid-container:hover {
+  .grid-container:active {
     filter: none;
   }
 
