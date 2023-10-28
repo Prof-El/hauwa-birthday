@@ -12,7 +12,7 @@ const Gallery = () => {
 
     return (
         <>
-            <h1>Gallery</h1>
+            <h1 style={{'marginLeft': '20px'}}>Memories</h1>
             <div className='box'>
                <img src={bill} />
                 <img src={bill4} />

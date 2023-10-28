@@ -110,10 +110,10 @@ const Home = () => {
 
             <Gallery />
             {
-                wish? <p style={{"padding": '10px', 'marginLeft': '40px'}}>We'll get right on it</p>
+                wish? <p style={{"padding": '10px', 'marginLeft': '40px'}}>The Universe is on it</p>
                 :
                 <div className='wish'>
-                <h4>Make a wish</h4>
+                <h4 style={{'marginLeft': "10px"}}>Make a wish</h4>
                 <input className='wishtext'/>
                 <input style={{'background': 'red', 'padding': '5px'}} 
                 type='submit'
