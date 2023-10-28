@@ -24,7 +24,7 @@ function SignIn() {
   const handleSubmit = () => {
 
       // Check if the sign-in was successful
-      if (data.answer === 'hauwa' || data.answer === 'Hauwa' || data.answer === 'Nanahauwa') {
+      if (data.answer.toLocaleLowerCase === 'hauwa' || data.answer === 'Hauwa' || data.answer === 'Nanahauwa' || data.answer === 'HAUWA') {
         history('/home')
         setSignIn(true)
         console.log("Sign-in successful");
@@ -42,10 +42,11 @@ function SignIn() {
     <>
         <div className='personal'>
             <img style={{width: '100%', height: '100%'}} src={pic1} alt='my picture' />
-            <p>SIGN IN TO VIEW MY GALLERY</p>
+            <p>Answer correctly to gain access</p>
         </div>
         
         <div className='sign-in-container'>
+            <label style={{'paddingBottom': '5px'}}>Who is the most beautiful lady in the world?</label>
             <input
             className='email'
             name='answer'
@@ -73,6 +74,7 @@ function SignIn() {
               />
             )}
           </div>
+          <p style={{"fontSize": '8px', 'marginTop': '10px', 'color': 'gold'}}>Hint: it starts with and H and ends with and a</p>
         </div>
      
     </>

@@ -16,6 +16,7 @@ import pic7 from '../../pictures/pic7.jpg'
 import pic8 from '../../pictures/pic8.jpg'
 import pic9 from '../../pictures/pic9.jpg'
 import pic10 from '../../pictures/pic10.jpg'
+import Gallery from '../components/gallery'
 
 const Home = () => {
     const [style1, setStyle1] = useState({"filter": 'blur(5px)'})
@@ -60,7 +61,11 @@ const Home = () => {
         setStyle9({"filter": "none"})
     }
 
+    const [wish, setWish] = useState(false)
 
+    const handleSubmit2 = () => {
+        setWish(true)
+    }
     
     
     return(
@@ -73,6 +78,23 @@ const Home = () => {
             <div>
                 <img style={{width: "100%", height: "100vh"}} src={hauwa} />
             </div>
+            <div className='message'>
+                <p>On this day, a star was born,
+                    Radiant as the morning sun, yet adorned.
+                    A lady of intellect, young and bright,
+                    In the vast cosmos, you are our light.
+
+                    Your wisdom, like an endless river flows,
+                    In your presence, a gentle wind blows.
+                    A mind so sharp, a heart so kind,
+                    A more beautiful soul, one could not find.
+
+                    May your journey be filled with joy and grace,
+                    As you continue to illuminate every space.
+                    Happy Birthday to you, oh lady so fine,
+                    May your brilliance forever shine. 🎉🎂 </p>
+            </div>
+            <h3>Click To View</h3>
             <div className='grid-container'>
                 <img style={style1} onClick={handleClick1} className='pic' src={pic2} />
                 <img style={style2} onClick={handleClick2} className='pic' src={pic3} />
@@ -85,6 +107,21 @@ const Home = () => {
                 <img style={style9} onClick={handleClick9}  className='pic' src={pic10} />
               
             </div>
+
+            <Gallery />
+            {
+                wish? <p style={{"padding": '10px', 'marginLeft': '40px'}}>We'll get right on it</p>
+                :
+                <div className='wish'>
+                <h4>Make a wish</h4>
+                <input className='wishtext'/>
+                <input style={{'background': 'red', 'padding': '5px'}} 
+                type='submit'
+                placeholder='Send'
+                onClick={handleSubmit2}/>
+            </div>
+            }
+            
             
         </>
     )
